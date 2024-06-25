@@ -48,7 +48,7 @@ const Landing = () => {
             >
               <Box
                 component={"img"}
-                src="/ashwin.jpg"
+                src="/Ashwin_photo.jpg"
                 sx={{ width: "100%", height: "100%", objectFit: "cover" }}
               />
             </Box>

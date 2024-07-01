@@ -28,6 +28,15 @@ const Landing = () => {
     }
   }, [expanded, navigate, url]);
 
+  const handleClick = (url) => {
+    if (isMobile) {
+      navigate(url);
+    } else {
+      setUrl(url);
+      setExpanded(true);
+    }
+  };
+
   return (
     <AnimatePresence>
       {!redirect && (
@@ -41,7 +50,7 @@ const Landing = () => {
             <Box
               sx={{
                 width: isMobile ? "100vw" : expanded ? "0vw" : "50vw",
-                height: isMobile ? (expanded ? "0vh" : "50vh") : "100vh",
+                height: isMobile ? "50vh" : "100vh",
                 overflow: "hidden",
                 transition: "width 0.7s, height 0.7s",
               }}
@@ -96,13 +105,12 @@ const Landing = () => {
                   >
                     Check out the old version!
                   </Button> */}
-                  <Stack direction={"row"} gap={2}>
+                  <Stack direction={isMobile ? "column" : "row"} gap={2}>
                     <Button
                       variant="outlined"
                       size="large"
                       onClick={() => {
-                        setUrl("/web-development");
-                        setExpanded(true);
+                        handleClick("/web-development");
                       }}
                     >
                       Web Development
@@ -111,8 +119,7 @@ const Landing = () => {
                       variant="outlined"
                       size="large"
                       onClick={() => {
-                        setUrl("/game-development");
-                        setExpanded(true);
+                        handleClick("/game-development");
                       }}
                     >
                       Game Development
@@ -121,8 +128,7 @@ const Landing = () => {
                       variant="outlined"
                       size="large"
                       onClick={() => {
-                        setUrl("/other-stuff");
-                        setExpanded(true);
+                        handleClick("/other-stuff");
                       }}
                     >
                       Other Stuff

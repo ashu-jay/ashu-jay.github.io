@@ -76,7 +76,7 @@ const Landing = () => {
                 <Typography variant="h2">Hey, I'm Ashwin!</Typography>
                 <Stack gap={5} alignItems={"center"} justifyContent={"center"}>
                   <Typography variant="h6">
-                    Yes, this website is still under development :)
+                    This website is still under development :)
                   </Typography>
                   <Typography variant="h6">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam

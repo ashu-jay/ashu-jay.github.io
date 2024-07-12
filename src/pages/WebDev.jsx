@@ -1,4 +1,4 @@
-import { Box, Typography, Stack, Button } from "@mui/material";
+import { Box, Typography, Stack, Button, useMediaQuery } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import Header from "../components/Header";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +7,12 @@ import { useState } from "react";
 const WebDev = () => {
   const [isExiting, setIsExiting] = useState(false);
   const navigate = useNavigate();
+
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isMd = useMediaQuery((theme) => theme.breakpoints.between("sm", "md"));
+  const isLg = useMediaQuery((theme) => theme.breakpoints.between("md", "lg"));
+
+  const padding = isMobile ? 2 : isMd ? "10%" : isLg ? "15%" : "25%";
 
   const handleNavClick = (url) => {
     if (url !== "/web-development") {
@@ -36,7 +42,7 @@ const WebDev = () => {
             alignItems={"center"}
             gap={5}
             py={10}
-            px={"20%"}
+            px={padding}
           >
             <Typography variant="h2">Web Dev</Typography>
 

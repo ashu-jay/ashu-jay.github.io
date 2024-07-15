@@ -1,16 +1,11 @@
-import { Box, Typography, Stack, Tooltip, useMediaQuery } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Box, Stack, Tooltip, useMediaQuery } from "@mui/material";
 import MenuItem from "./MenuItem";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Logo from "./Logo";
-import {
-  Close,
-  Menu,
-  MonitorOutlined,
-  PendingOutlined,
-  SportsEsportsOutlined,
-} from "@mui/icons-material";
+import { Close, Menu } from "@mui/icons-material";
+import GitHubIcon from "./GitHubIcon";
+import LinkedInIcon from "./LinkedInIcon";
 
 const Header = ({ handleNavClick }) => {
   const header = useRef(null);
@@ -40,7 +35,6 @@ const Header = ({ handleNavClick }) => {
         // rect.right <=
         //   (window.innerWidth || document.documentElement.clientWidth);
         setIsHeaderOutOfView(!isVisible);
-        // if (isVisible) setOpenMenu(false);
       }
     };
 
@@ -66,66 +60,6 @@ const Header = ({ handleNavClick }) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            {/* <Box
-              position={"fixed"}
-              top={0}
-              bottom={isMobile ? "auto" : 0}
-              left={0}
-              right={isMobile ? 0 : "auto"}
-              display={"flex"}
-              justifyContent={"center"}
-              alignItems={isMobile ? "flex-start" : "center"}
-            >
-              <Stack
-                direction={isMobile ? "row" : "column"}
-                p={isMobile ? 1 : 3}
-                width={isMobile ? "100%" : "auto"}
-                justifyContent={"space-evenly"}
-                gap={2}
-                bgcolor={"primary.500"}
-                alignItems={"center"}
-                sx={
-                  !isMobile && {
-                    borderTopRightRadius: "16px",
-                    borderBottomRightRadius: "16px",
-                  }
-                }
-              >
-                <Logo
-                  width={"40px"}
-                  height={"40px"}
-                  color={"white"}
-                  onClick={() => handleNavClick("/")}
-                />
-                <motion.div initial={{ scale: 1 }} whileHover={{ scale: 1.2 }}>
-                  <Tooltip title={"Web Development"} placement="right">
-                    <MonitorOutlined
-                      fontSize="large"
-                      sx={{ cursor: "pointer", color: "white" }}
-                      onClick={() => handleNavClick("/web-development")}
-                    />
-                  </Tooltip>
-                </motion.div>
-                <motion.div initial={{ scale: 1 }} whileHover={{ scale: 1.2 }}>
-                  <Tooltip title={"Game Development"} placement="right">
-                    <SportsEsportsOutlined
-                      fontSize="large"
-                      sx={{ cursor: "pointer", color: "white" }}
-                      onClick={() => handleNavClick("/game-development")}
-                    />
-                  </Tooltip>
-                </motion.div>
-                <motion.div initial={{ scale: 1 }} whileHover={{ scale: 1.2 }}>
-                  <Tooltip title={"Miscellaneous"} placement="right">
-                    <PendingOutlined
-                      fontSize="large"
-                      sx={{ cursor: "pointer", color: "white" }}
-                      onClick={() => handleNavClick("/other-stuff")}
-                    />
-                  </Tooltip>
-                </motion.div>
-              </Stack>
-            </Box> */}
             <Box
               position={"fixed"}
               top={isMobile ? 20 : 50}
@@ -190,17 +124,24 @@ const Header = ({ handleNavClick }) => {
                 bgcolor={"primary.500"}
                 justifyContent={"center"}
               >
-                <Box
-                  px={2}
-                  width={"60px"}
-                  height={"60px"}
-                  alignSelf={isMobile ? "flex-end" : "flex-start"}
+                <motion.div
+                  initial={{ rotate: 0 }}
+                  animate={{ rotate: -90 }}
+                  exit={{ rotate: 0 }}
+                  style={{
+                    paddingLeft: 2,
+                    paddingRight: 2,
+                    width: "60px",
+                    height: "60px",
+                    alignSelf: isMobile ? "flex-end" : "flex-start",
+                  }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
                   onClick={() => setOpenMenu(false)}
                 >
                   <Close
                     sx={{ color: "white", fontSize: 60, cursor: "pointer" }}
                   />
-                </Box>
+                </motion.div>
                 <Stack
                   gap={3}
                   justifyContent={"center"}
@@ -215,22 +156,28 @@ const Header = ({ handleNavClick }) => {
                   />
                   <MenuItem
                     onClick={() => handleNavClick("/web-development")}
-                    side={true}
+                    side
                   >
                     WEB DEVELOPMENT
                   </MenuItem>
                   <MenuItem
                     onClick={() => handleNavClick("/game-development")}
-                    side={true}
+                    side
                   >
                     GAME DEVELOPMENT
                   </MenuItem>
-                  <MenuItem
-                    onClick={() => handleNavClick("/other-stuff")}
-                    side={true}
-                  >
+                  <MenuItem onClick={() => handleNavClick("/other-stuff")} side>
                     MISCELLANEOUS
                   </MenuItem>
+                </Stack>
+                <Stack
+                  direction={"row"}
+                  gap={1}
+                  justifyContent={"center"}
+                  alignItems={"center"}
+                >
+                  <GitHubIcon color={"white"} />
+                  <LinkedInIcon color={"white"} />
                 </Stack>
               </Stack>
             </motion.div>
@@ -269,22 +216,13 @@ const Header = ({ handleNavClick }) => {
               px={2}
               justifyContent={"center"}
             >
-              <MenuItem
-                onClick={() => handleNavClick("/web-development")}
-                side={false}
-              >
+              <MenuItem onClick={() => handleNavClick("/web-development")}>
                 WEB DEVELOPMENT
               </MenuItem>
-              <MenuItem
-                onClick={() => handleNavClick("/game-development")}
-                side={false}
-              >
+              <MenuItem onClick={() => handleNavClick("/game-development")}>
                 GAME DEVELOPMENT
               </MenuItem>
-              <MenuItem
-                onClick={() => handleNavClick("/other-stuff")}
-                side={false}
-              >
+              <MenuItem onClick={() => handleNavClick("/other-stuff")}>
                 MISCELLANEOUS
               </MenuItem>
             </Stack>

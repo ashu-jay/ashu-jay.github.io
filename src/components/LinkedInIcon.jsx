@@ -1,7 +1,7 @@
 import { Tooltip, Link } from "@mui/material";
 import { LinkedIn } from "@mui/icons-material";
 
-const LinkedInIcon = (color) => {
+const LinkedInIcon = ({ color, hover = "none" }) => {
   return (
     <Tooltip title={"LinkedIn"} placement="top">
       <Link
@@ -12,7 +12,7 @@ const LinkedInIcon = (color) => {
         <LinkedIn
           sx={{
             color: color,
-            ":hover": { transform: "scale(1.2)" },
+            ":hover": { transform: "scale(1.2)", color: hover },
           }}
           fontSize="large"
         />

@@ -1,9 +1,11 @@
 import { Box, Tooltip } from "@mui/material";
+import React from "react";
 
-const Logo = ({ width, height, color, onClick }) => {
+const Logo = React.forwardRef(({ width, height, color, onClick }, ref) => {
   return (
     <Tooltip title={"Home"} followCursor placement="right">
       <Box
+        ref={ref}
         component="svg"
         viewBox="0 0 512.000000 512.000000"
         sx={{
@@ -44,6 +46,6 @@ const Logo = ({ width, height, color, onClick }) => {
       </Box>
     </Tooltip>
   );
-};
+});
 
 export default Logo;

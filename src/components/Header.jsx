@@ -6,9 +6,25 @@ import Logo from "./Logo";
 import { Close, Menu } from "@mui/icons-material";
 import GitHubIcon from "./GitHubIcon";
 import LinkedInIcon from "./LinkedInIcon";
+import theme from "../theme";
 
-const Header = ({ handleNavClick }) => {
-  const header = useRef(null);
+const generateSvgUrl = (color) => {
+  return `url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2.17 35.28" preserveAspectRatio="none"><path d="M1.67 0c-.55 3.07.41 9.27 0 16.14-.4 6.88-.58 13.75.1 19.14h.4V0z" fill="%23${
+    color.split("#")[1]
+  }"/><path d="M1.16 0c-.8 3.17.4 7.29.56 10.04C1.89 12.8.25 19.3.42 22.71c.16 3.43.84 4.65.86 7.05.03 2.4-.88 5.52-.88 5.52h1.77V0z" opacity=".5" fill="%23${
+    color.split("#")[1]
+  }"/><path d="M.31 0c.84 2.56.3 7.68.43 11.79.12 4.1.61 6.86.28 9.58-.33 2.73-1.18 5.61-1 8.61.19 3 .82 4.73.84 5.3h1.2V0z" opacity=".5" fill="%23${
+    color.split("#")[1]
+  }"/></svg>')`;
+};
+
+const Header = ({
+  handleNavClick,
+  side = false,
+  color = theme.palette.primary,
+  secondary = theme.palette.secondary,
+}) => {
+  const headerRef = useRef(null);
   const [isHeaderOutOfView, setIsHeaderOutOfView] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
 
@@ -26,8 +42,8 @@ const Header = ({ handleNavClick }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (header.current) {
-        const rect = header.current.getBoundingClientRect();
+      if (headerRef.current) {
+        const rect = headerRef.current.getBoundingClientRect();
         const isVisible = rect.bottom >= 0;
         // rect.left >= 0 &&
         // rect.bottom <=
@@ -53,7 +69,7 @@ const Header = ({ handleNavClick }) => {
   return (
     <>
       <AnimatePresence>
-        {(isHeaderOutOfView || isMobile) && (
+        {(isHeaderOutOfView || isMobile || side) && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -71,8 +87,12 @@ const Header = ({ handleNavClick }) => {
               justifyContent={"center"}
               onClick={() => setOpenMenu(true)}
               sx={{ cursor: "pointer" }}
+              borderRadius={"8px"}
+              bgcolor={color[100]}
+              px={1}
+              zIndex={99}
             >
-              <Menu sx={{ color: "primary.500", fontSize: 60 }} />
+              <Menu sx={{ color: color[500], fontSize: 60 }} />
             </Box>
           </motion.div>
         )}
@@ -110,18 +130,23 @@ const Header = ({ handleNavClick }) => {
               }}
               style={{
                 display: "flex",
-                flexDirection: "row",
                 position: "fixed",
+                height: "100vh",
                 top: 0,
                 right: 0,
                 zIndex: 101,
+                overflowY: "auto",
               }}
             >
-              {!isMobile && <div className="shapedividers_com-2802"></div>}
+              {!isMobile && (
+                <div
+                  className="shapedividers_com-2802"
+                  style={{ backgroundImage: generateSvgUrl(color[500]) }}
+                ></div>
+              )}
               <Stack
                 width={drawerWidth}
-                height={"100vh"}
-                bgcolor={"primary.500"}
+                bgcolor={color[500]}
                 justifyContent={"center"}
               >
                 <motion.div
@@ -139,45 +164,53 @@ const Header = ({ handleNavClick }) => {
                   onClick={() => setOpenMenu(false)}
                 >
                   <Close
-                    sx={{ color: "white", fontSize: 60, cursor: "pointer" }}
+                    sx={{ color: "#ffffff", fontSize: 60, cursor: "pointer" }}
                   />
                 </motion.div>
-                <Stack
-                  gap={3}
-                  justifyContent={"center"}
-                  alignItems={"center"}
-                  height={"80vh"}
-                >
-                  <Logo
-                    width={"100px"}
-                    height={"100px"}
-                    color={"white"}
-                    onClick={() => handleNavClick("/")}
-                  />
-                  <MenuItem
-                    onClick={() => handleNavClick("/web-development")}
-                    side
+                <Stack gap={10} justifyContent={"center"} height={"80vh"}>
+                  <Stack
+                    gap={3}
+                    justifyContent={"center"}
+                    alignItems={"center"}
                   >
-                    WEB DEVELOPMENT
-                  </MenuItem>
-                  <MenuItem
-                    onClick={() => handleNavClick("/game-development")}
-                    side
+                    <Logo
+                      ref={headerRef}
+                      width={"100px"}
+                      height={"100px"}
+                      color={"#ffffff"}
+                      onClick={() => handleNavClick("/")}
+                    />
+                    <MenuItem
+                      onClick={() => handleNavClick("/web-development")}
+                      side
+                      color={secondary}
+                    >
+                      WEB DEVELOPMENT
+                    </MenuItem>
+                    <MenuItem
+                      onClick={() => handleNavClick("/game-development")}
+                      side
+                      color={secondary}
+                    >
+                      GAME DEVELOPMENT
+                    </MenuItem>
+                    <MenuItem
+                      onClick={() => handleNavClick("/other-stuff")}
+                      side
+                      color={secondary}
+                    >
+                      MISCELLANEOUS
+                    </MenuItem>
+                  </Stack>
+                  <Stack
+                    direction={"row"}
+                    gap={1}
+                    justifyContent={"center"}
+                    alignItems={"center"}
                   >
-                    GAME DEVELOPMENT
-                  </MenuItem>
-                  <MenuItem onClick={() => handleNavClick("/other-stuff")} side>
-                    MISCELLANEOUS
-                  </MenuItem>
-                </Stack>
-                <Stack
-                  direction={"row"}
-                  gap={1}
-                  justifyContent={"center"}
-                  alignItems={"center"}
-                >
-                  <GitHubIcon color={"white"} />
-                  <LinkedInIcon color={"white"} />
+                    <GitHubIcon color={"white"} hover={secondary[500]} />
+                    <LinkedInIcon color={"white"} hover={secondary[500]} />
+                  </Stack>
                 </Stack>
               </Stack>
             </motion.div>
@@ -185,9 +218,9 @@ const Header = ({ handleNavClick }) => {
         )}
       </AnimatePresence>
 
-      {!isMobile && (
+      {!isMobile && !side && (
         <motion.div
-          ref={header}
+          ref={headerRef}
           initial={{ opacity: 1 }}
           animate={isHeaderOutOfView ? { opacity: 0 } : { opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -225,6 +258,10 @@ const Header = ({ handleNavClick }) => {
               <MenuItem onClick={() => handleNavClick("/other-stuff")}>
                 MISCELLANEOUS
               </MenuItem>
+              <Stack direction={"row"} gap={2}>
+                <GitHubIcon color={"primary.500"} />
+                <LinkedInIcon color={"primary.500"} />
+              </Stack>
             </Stack>
           </Stack>
         </motion.div>

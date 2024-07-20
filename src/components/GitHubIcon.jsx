@@ -1,7 +1,7 @@
 import { Tooltip, Link } from "@mui/material";
 import { GitHub } from "@mui/icons-material";
 
-const GitHubIcon = (color) => {
+const GitHubIcon = ({ color, hover = "none" }) => {
   return (
     <Tooltip title={"GitHub"} placement="top">
       <Link
@@ -12,7 +12,7 @@ const GitHubIcon = (color) => {
         <GitHub
           sx={{
             color: color,
-            ":hover": { transform: "scale(1.2)" },
+            ":hover": { transform: "scale(1.2)", color: hover },
           }}
           fontSize="large"
         />

@@ -1,29 +1,30 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
+import theme from "../theme";
 
-const MenuItem = ({ children, onClick, side, border }) => {
+const MenuItem = ({
+  children,
+  onClick,
+  side,
+  border,
+  color = theme.palette.primary,
+}) => {
   const theme = useTheme();
 
   const menuItemVariants = {
     initial: {
       scale: 1,
       borderWidth: border ? 1 : 0,
-      borderColor: side
-        ? theme.palette.secondary[200]
-        : theme.palette.primary[200],
-      backgroundColor: side ? "white" : theme.palette.primary[50],
+      borderColor: side ? color[200] : theme.palette.primary[200],
+      backgroundColor: side ? "#ffffff" : theme.palette.primary[50],
       transition: { duration: 0.1 },
     },
     hover: {
       scale: 1.1,
       borderWidth: 2,
-      borderColor: side
-        ? theme.palette.secondary[600]
-        : theme.palette.primary[500],
-      backgroundColor: side
-        ? theme.palette.secondary[100]
-        : theme.palette.primary[100],
-      boxShadow: side ? "5px 5px 7px #ffeb3b" : "5px 5px 7px #673ab7",
+      borderColor: side ? color[500] : theme.palette.primary[500],
+      backgroundColor: side ? color[100] : theme.palette.primary[100],
+      boxShadow: side ? `5px 5px 7px ${color[500]}` : "5px 5px 7px #673ab7",
       transition: { duration: 0.1 },
     },
   };

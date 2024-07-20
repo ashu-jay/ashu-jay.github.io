@@ -1,5 +1,15 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
+import WebDev from "../pages/web/WebDev";
+import Arusto from "../pages/web/Arusto";
+import DDAI from "../pages/web/DDAI";
+import GameDev from "../pages/game/GameDev";
+import Obelisk from "../pages/game/Obelisk";
+import BetterPick from "../pages/game/BetterPick";
+import Misc from "../pages/misc/Misc";
+import Wrapped from "../pages/misc/Wrapped";
+import SpaceMadness from "../pages/game/SpaceMadness";
 
 export const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -27,4 +37,34 @@ export const RouteTitleManager = () => {
   }, [location]);
 
   return null;
+};
+
+export const WebDevRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<WebDev />} />
+      <Route path="/arusto-ai" element={<Arusto />} />
+      <Route path="/d-and-d-ai" element={<DDAI />} />
+    </Routes>
+  );
+};
+
+export const GameDevRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<GameDev />} />
+      <Route path="/project-obelisk" element={<Obelisk />} />
+      <Route path="/the-better-pick" element={<BetterPick />} />
+      <Route path="/space-madness" element={<SpaceMadness />} />
+    </Routes>
+  );
+};
+
+export const MiscRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Misc />} />
+      <Route path="/wrapped" element={<Wrapped />} />
+    </Routes>
+  );
 };

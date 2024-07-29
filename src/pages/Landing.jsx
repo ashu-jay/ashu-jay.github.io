@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Box, Paper, Stack, Typography, useMediaQuery } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import MenuItem from "../components/MenuItem";
 import GitHubIcon from "../components/GitHubIcon";
 import LinkedInIcon from "../components/LinkedInIcon";
+import LandingButton from "../components/LandingButton";
 
 const Landing = () => {
   const [expanded, setExpanded] = useState(false);
@@ -98,31 +98,21 @@ const Landing = () => {
                   >
                     Check out the old version!
                   </Button> */}
-                  <Stack
-                    direction={isMobile ? "column" : "column"}
-                    gap={2}
-                    flexWrap={"wrap"}
-                    justifyContent={"center"}
-                  >
-                    <MenuItem
+                  <Stack gap={2} flexWrap={"wrap"} justifyContent={"center"}>
+                    <LandingButton
                       onClick={() => handleClick("/web-development")}
-                      border
                     >
                       WEB DEVELOPMENT
-                    </MenuItem>
+                    </LandingButton>
 
-                    <MenuItem
+                    <LandingButton
                       onClick={() => handleClick("/game-development")}
-                      border
                     >
                       GAME DEVELOPMENT
-                    </MenuItem>
-                    <MenuItem
-                      onClick={() => handleClick("/other-stuff")}
-                      border
-                    >
+                    </LandingButton>
+                    <LandingButton onClick={() => handleClick("/other-stuff")}>
                       MISCELLANEOUS
-                    </MenuItem>
+                    </LandingButton>
                   </Stack>
                   <Stack direction={"row"} gap={2}>
                     <GitHubIcon color={"primary.500"} />

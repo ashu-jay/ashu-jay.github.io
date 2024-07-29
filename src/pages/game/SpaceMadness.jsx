@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { deepPurple, purple } from "@mui/material/colors";
+import { deepPurple, pink, purple } from "@mui/material/colors";
 
 const SpaceMadness = () => {
   const [isExiting, setIsExiting] = useState(false);
@@ -33,13 +33,13 @@ const SpaceMadness = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.3 }}
-          style={{ backgroundColor: deepPurple[50], minHeight: "100vh" }}
+          style={{ backgroundColor: purple[50], minHeight: "100vh" }}
         >
           <Header
             handleNavClick={handleNavClick}
             side
-            color={deepPurple}
-            secondary={purple}
+            color={purple}
+            secondary={pink}
           />
           <Stack
             direction={"column"}

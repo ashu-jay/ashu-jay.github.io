@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ContentCard from "../../components/ContentCard";
-import { deepPurple, green, grey } from "@mui/material/colors";
+import { deepPurple, green, grey, purple } from "@mui/material/colors";
 
 const GameDev = () => {
   const [isExiting, setIsExiting] = useState(false);
@@ -87,8 +87,8 @@ const GameDev = () => {
             />
             <ContentCard
               title={"Space Madness"}
-              color={deepPurple[500]}
-              shadow={deepPurple[300]}
+              color={purple[500]}
+              shadow={purple[300]}
               onClick={() => handleNavClick("/game-development/space-madness")}
             />
           </Stack>

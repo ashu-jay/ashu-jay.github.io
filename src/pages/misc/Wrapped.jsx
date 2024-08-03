@@ -1,9 +1,10 @@
 import { Typography, Stack, useMediaQuery } from "@mui/material";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { cyan, teal } from "@mui/material/colors";
+import Background from "../../components/Background";
 
 const Wrapped = () => {
   const [isExiting, setIsExiting] = useState(false);
@@ -28,13 +29,7 @@ const Wrapped = () => {
   return (
     <AnimatePresence>
       {!isExiting && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          style={{ backgroundColor: teal[50], minHeight: "100vh" }}
-        >
+        <Background bgColor={teal}>
           <Header
             handleNavClick={handleNavClick}
             side
@@ -52,7 +47,7 @@ const Wrapped = () => {
           >
             <Typography variant="h2">Wrapped</Typography>
           </Stack>
-        </motion.div>
+        </Background>
       )}
     </AnimatePresence>
   );

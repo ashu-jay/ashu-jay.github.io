@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { brown, orange } from "@mui/material/colors";
+import Background from "../../components/Background";
 
 const DDAI = () => {
   const [isExiting, setIsExiting] = useState(false);
@@ -28,13 +29,7 @@ const DDAI = () => {
   return (
     <AnimatePresence>
       {!isExiting && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          style={{ backgroundColor: brown[50], minHeight: "100vh" }}
-        >
+        <Background bgColor={brown}>
           <Header
             handleNavClick={handleNavClick}
             side
@@ -52,7 +47,7 @@ const DDAI = () => {
           >
             <Typography variant="h2">Dungeons and Dragons AI</Typography>
           </Stack>
-        </motion.div>
+        </Background>
       )}
     </AnimatePresence>
   );

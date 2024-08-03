@@ -1,11 +1,13 @@
 import { Typography, Stack, useMediaQuery } from "@mui/material";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { grey } from "@mui/material/colors";
+import Background from "../../components/Background";
 
 const black = {
+  50: "#fafafa",
   100: "#e0e0e0",
   500: "#212121",
 };
@@ -33,13 +35,7 @@ const BetterPick = () => {
   return (
     <AnimatePresence>
       {!isExiting && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          style={{ backgroundColor: grey[50], minHeight: "100vh" }}
-        >
+        <Background bgColor={black}>
           <Header
             handleNavClick={handleNavClick}
             side
@@ -57,7 +53,7 @@ const BetterPick = () => {
           >
             <Typography variant="h2">The Better Pick</Typography>
           </Stack>
-        </motion.div>
+        </Background>
       )}
     </AnimatePresence>
   );

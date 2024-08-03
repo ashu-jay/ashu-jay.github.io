@@ -1,9 +1,10 @@
 import { Typography, Stack, useMediaQuery } from "@mui/material";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { deepPurple, pink, purple } from "@mui/material/colors";
+import { pink, purple } from "@mui/material/colors";
+import Background from "../../components/Background";
 
 const SpaceMadness = () => {
   const [isExiting, setIsExiting] = useState(false);
@@ -28,13 +29,7 @@ const SpaceMadness = () => {
   return (
     <AnimatePresence>
       {!isExiting && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          style={{ backgroundColor: purple[50], minHeight: "100vh" }}
-        >
+        <Background bgColor={purple}>
           <Header
             handleNavClick={handleNavClick}
             side
@@ -52,7 +47,7 @@ const SpaceMadness = () => {
           >
             <Typography variant="h2">Space Madness</Typography>
           </Stack>
-        </motion.div>
+        </Background>
       )}
     </AnimatePresence>
   );

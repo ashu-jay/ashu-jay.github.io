@@ -2,10 +2,10 @@ import { Box, Stack, Tooltip, useMediaQuery } from "@mui/material";
 import MenuItem from "./MenuItem";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import Logo from "./Logo";
+import Logo from "./icons/Logo";
 import { Close, Menu } from "@mui/icons-material";
-import GitHubIcon from "./GitHubIcon";
-import LinkedInIcon from "./LinkedInIcon";
+import GitHubIcon from "./icons/GitHubIcon";
+import LinkedInIcon from "./icons/LinkedInIcon";
 import theme from "../theme";
 
 const generateSvgUrl = (color) => {

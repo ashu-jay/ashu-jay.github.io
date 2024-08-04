@@ -1,16 +1,8 @@
 import { Paper, Stack, Typography, useMediaQuery } from "@mui/material";
 import { motion, AnimatePresence } from "framer-motion";
-import { CardImage } from "./CardImage";
+import CardImage from "./CardImage";
 
-export const PaperCard = ({
-  title,
-  description,
-  image,
-  currentSlide,
-  direction,
-  slideVariants,
-  color,
-}) => {
+const PaperCard = ({ data, currentSlide, direction, slideVariants, color }) => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isMd = useMediaQuery((theme) => theme.breakpoints.between("sm", "md"));
 
@@ -50,7 +42,7 @@ export const PaperCard = ({
           }}
         >
           {currentSlide % 2 === 1 && !isMd && !isMobile && (
-            <CardImage image={image} />
+            <CardImage image={data.image} />
           )}
           <Stack
             px={2}
@@ -73,14 +65,16 @@ export const PaperCard = ({
               },
             }}
           >
-            <Typography variant="h2">{title}</Typography>
-            <Typography variant="h6">{description}</Typography>
+            <Typography variant="h2">{data.title}</Typography>
+            <Typography variant="h6">{data.description}</Typography>
           </Stack>
           {(currentSlide % 2 === 0 || isMd || isMobile) && (
-            <CardImage image={image} />
+            <CardImage image={data.image} />
           )}
         </Stack>
       </AnimatePresence>
     </Paper>
   );
 };
+
+export default PaperCard;

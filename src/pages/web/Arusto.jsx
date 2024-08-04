@@ -6,11 +6,16 @@ import { orange, yellow } from "@mui/material/colors";
 import Background from "../../components/Background";
 import aristotle from "../../images/aristotle.png";
 import arusto_banner from "../../images/arusto_banner.jpeg";
-import Carousel from "../../components/Carousel";
+import Carousel from "../../components/carousel/Carousel";
+import { Stack, useMediaQuery } from "@mui/material";
+import CarouselHeader from "../../components/carousel/CarouselHeader";
 
 const Arusto = () => {
   const [isExiting, setIsExiting] = useState(false);
   const navigate = useNavigate();
+
+  const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
+  const isMd = useMediaQuery((theme) => theme.breakpoints.between("sm", "md"));
 
   const handleNavClick = (url) => {
     if (url !== "/web-development/arusto-ai") {
@@ -41,13 +46,21 @@ const Arusto = () => {
     <AnimatePresence>
       {!isExiting && (
         <Background bgColor={orange}>
-          <Header
-            handleNavClick={handleNavClick}
-            side
-            color={orange}
-            secondary={yellow}
-          />
-          <Carousel color={orange} data={data} />
+          {(isMobile || isMd) && (
+            <Header
+              handleNavClick={handleNavClick}
+              side
+              color={orange}
+              secondary={yellow}
+            />
+          )}
+          {!isMobile && !isMd && (
+            <Stack width={"100%"} height={"70vh"} alignItems={"center"}>
+              <CarouselHeader color={orange} handleNavClick={handleNavClick} />
+              <Carousel color={orange} data={data} />
+            </Stack>
+          )}
+          {(isMobile || isMd) && <Carousel color={orange} data={data} />}
         </Background>
       )}
     </AnimatePresence>

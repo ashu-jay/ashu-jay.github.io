@@ -1,7 +1,7 @@
 import { Stack, useMediaQuery } from "@mui/material";
 import { useState } from "react";
-import { CarouselButton } from "./CarouselButton";
-import { PaperCard } from "./PaperCard";
+import CarouselButton from "./CarouselButton";
+import PaperCard from "./PaperCard";
 
 const Carousel = ({ color, data }) => {
   const [[currentSlide, direction], setCurrentSlide] = useState([0, 0]);
@@ -34,7 +34,7 @@ const Carousel = ({ color, data }) => {
 
   return (
     <Stack
-      py={5}
+      py={isMobile || isMd ? 5 : 0}
       direction={isMobile || isMd ? "column" : "row"}
       gap={isMobile || isMd ? 10 : 2}
       px={isMobile ? 1 : 0}
@@ -55,9 +55,7 @@ const Carousel = ({ color, data }) => {
         data.map((item, index) => {
           return (
             <PaperCard
-              title={item.title}
-              description={item.description}
-              image={item.image}
+              data={item}
               currentSlide={currentSlide}
               direction={direction}
               slideVariants={slideVariants}
@@ -67,9 +65,7 @@ const Carousel = ({ color, data }) => {
         })}
       {!isMd && !isMobile && (
         <PaperCard
-          title={data[currentSlide].title}
-          description={data[currentSlide].description}
-          image={data[currentSlide].image}
+          data={data[currentSlide]}
           currentSlide={currentSlide}
           direction={direction}
           slideVariants={slideVariants}

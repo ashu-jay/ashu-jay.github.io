@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Box, Paper, Stack, Typography, useMediaQuery } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import GitHubIcon from "../components/GitHubIcon";
-import LinkedInIcon from "../components/LinkedInIcon";
+import GitHubIcon from "../components/icons/GitHubIcon";
+import LinkedInIcon from "../components/icons/LinkedInIcon";
 import LandingButton from "../components/LandingButton";
 
 const Landing = () => {

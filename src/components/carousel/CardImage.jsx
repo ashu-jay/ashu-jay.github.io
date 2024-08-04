@@ -1,6 +1,6 @@
-import { Box, useMediaQuery } from "@mui/material";
+import { Box, Skeleton, useMediaQuery } from "@mui/material";
 
-export const CardImage = ({ image }) => {
+const CardImage = ({ image }) => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isMd = useMediaQuery((theme) => theme.breakpoints.between("sm", "md"));
 
@@ -18,13 +18,23 @@ export const CardImage = ({ image }) => {
         overflow: "hidden",
       }}
     >
-      <Box
-        component={"img"}
-        width={"100%"}
-        height={"100%"}
-        src={image}
-        sx={{ objectFit: "cover" }}
-      />
+      {!image && (
+        <Skeleton
+          variant="rectangular"
+          sx={{ width: "100%", height: "100%" }}
+        />
+      )}
+      {image && (
+        <Box
+          component={"img"}
+          width={"100%"}
+          height={"100%"}
+          src={image}
+          sx={{ objectFit: "cover" }}
+        />
+      )}
     </Box>
   );
 };
+
+export default CardImage;

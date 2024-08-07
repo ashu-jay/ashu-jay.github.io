@@ -1,12 +1,12 @@
-import { Stack, useMediaQuery } from "@mui/material";
+import { Link, Stack, useMediaQuery } from "@mui/material";
 import { AnimatePresence } from "framer-motion";
 import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { green, lime } from "@mui/material/colors";
 import Background from "../../components/Background";
-import aristotle from "../../images/aristotle.png";
-import arusto_banner from "../../images/arusto_banner.jpeg";
+import obelisk_gameplay from "../../images/obelisk_gameplay.png";
+import obelisk_logo from "../../images/obelisk_logo.png";
 import Carousel from "../../components/carousel/Carousel";
 import CarouselHeader from "../../components/carousel/CarouselHeader";
 
@@ -29,16 +29,45 @@ const Obelisk = () => {
 
   const data = [
     {
-      title: "Arusto",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor pellentesque luctus. Nulla sodales at massa ut laoreet. Duis ut ultrices neque. Sed sed sapien ut massa maximus aliquam. Aliquam ut tortor non dolor vehicula ullamcorper tincidunt molestie mi. Quisque ut augue hendrerit, viverra augue sed, mollis mauris. Fusce vitae nibh eleifend, elementum massa id, rutrum ante. Praesent eget lacus est. Nullam nec auctor eros. Aliquam molestie tincidunt leo nec ultricies. Sed tempor blandit ante, vitae auctor neque dapibus et. Nunc vel egestas est, sed congue massa.",
-      image: aristotle,
+      title: "Project Obelisk",
+      description: (
+        <>
+          As part of the VGDev club at Georgia Tech, I helped create a video
+          game called Project Obelisk - a 3D isometric shooter, where the player
+          must place down weapons in their inventory into a room before being
+          able to enter and use those weapons. I also won an award for my
+          contributions to the game, and I'm proud to be a part of its creation.
+          To look at other projects from VGDev,{" "}
+          <Link
+            href="https://www.gtvgdev.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            click here!
+          </Link>
+        </>
+      ),
+      image: obelisk_logo,
     },
     {
-      title: "Maybe",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor pellentesque luctus. Nulla sodales at massa ut laoreet. Duis ut ultrices neque. Sed sed sapien ut massa maximus aliquam. Aliquam ut tortor non dolor vehicula ullamcorper tincidunt molestie mi. Quisque ut augue hendrerit, viverra augue sed, mollis mauris. Fusce vitae nibh eleifend, elementum massa id, rutrum ante. Praesent eget lacus est. Nullam nec auctor eros. Aliquam molestie tincidunt leo nec ultricies. Sed tempor blandit ante, vitae auctor neque dapibus et. Nunc vel egestas est, sed congue massa.",
-      image: arusto_banner,
+      title: "What I did",
+      description: (
+        <>
+          As the design lead, I worked closely with game lead and the team to
+          create and balance game levels and mechanics in the game. I was also
+          in charge of a few tasks involving the on-screen UI. I also
+          implemented one weapon in the game, along with other improvements to
+          gameplay and play style. Check it out{" "}
+          <Link
+            href="https://www.gtvgdev.com/games-archive/project-obelisk"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            here!
+          </Link>
+        </>
+      ),
+      image: obelisk_gameplay,
     },
   ];
 

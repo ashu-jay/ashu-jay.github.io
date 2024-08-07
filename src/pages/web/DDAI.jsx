@@ -1,12 +1,13 @@
-import { Stack, useMediaQuery } from "@mui/material";
+import { Link, Stack, useMediaQuery } from "@mui/material";
 import { AnimatePresence } from "framer-motion";
 import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { brown, orange } from "@mui/material/colors";
 import Background from "../../components/Background";
-import aristotle from "../../images/aristotle.png";
-import arusto_banner from "../../images/arusto_banner.jpeg";
+import dd_home from "../../images/dd_home.png";
+import dd_play from "../../images/dd_play.png";
+import dd_win from "../../images/dd_win.png";
 import Carousel from "../../components/carousel/Carousel";
 import CarouselHeader from "../../components/carousel/CarouselHeader";
 
@@ -29,16 +30,34 @@ const DDAI = () => {
 
   const data = [
     {
-      title: "Arusto",
+      title: "Dungeons and Dragons AI",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor pellentesque luctus. Nulla sodales at massa ut laoreet. Duis ut ultrices neque. Sed sed sapien ut massa maximus aliquam. Aliquam ut tortor non dolor vehicula ullamcorper tincidunt molestie mi. Quisque ut augue hendrerit, viverra augue sed, mollis mauris. Fusce vitae nibh eleifend, elementum massa id, rutrum ante. Praesent eget lacus est. Nullam nec auctor eros. Aliquam molestie tincidunt leo nec ultricies. Sed tempor blandit ante, vitae auctor neque dapibus et. Nunc vel egestas est, sed congue massa.",
-      image: aristotle,
+        "As part of the Web Development Club at Georgia Tech, I helped create a web-based game called Dungeons and Dragons AI. The idea was simple - you and your friends play an online representation of the board game, but the story was created by ChatGPT. This project was the first time I used React, as well as my first time fetching data from APIs (OpenAI in this case) through JavaScript.",
+      image: dd_home,
     },
     {
-      title: "Maybe",
+      title: "The Back-end",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor pellentesque luctus. Nulla sodales at massa ut laoreet. Duis ut ultrices neque. Sed sed sapien ut massa maximus aliquam. Aliquam ut tortor non dolor vehicula ullamcorper tincidunt molestie mi. Quisque ut augue hendrerit, viverra augue sed, mollis mauris. Fusce vitae nibh eleifend, elementum massa id, rutrum ante. Praesent eget lacus est. Nullam nec auctor eros. Aliquam molestie tincidunt leo nec ultricies. Sed tempor blandit ante, vitae auctor neque dapibus et. Nunc vel egestas est, sed congue massa.",
-      image: arusto_banner,
+        "My tasks for the back-end aspect of this project included making functions for sending prompts to ChatGPT and retrieving answers from it. Considering I was more inclined to the visuals of the game, this was a good experience for me to learn more about data handling and storage.",
+      image: dd_play,
+    },
+    {
+      title: "The Front-end",
+      description: (
+        <>
+          For the front-end, a teammate and I mostly worked on the main page for
+          the gameplay, as well as the ending win/lose screens. We used{" "}
+          <Link
+            href="https://v2.chakra-ui.com/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Chakra UI
+          </Link>{" "}
+          to align and display different components for the game.
+        </>
+      ),
+      image: dd_win,
     },
   ];
 

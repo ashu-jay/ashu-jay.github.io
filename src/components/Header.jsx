@@ -223,6 +223,7 @@ const Header = ({
           justifyContent={"center"}
           flexWrap={"wrap"}
           py={2}
+          zIndex={99}
           boxShadow={"0 0 5px 5px rgba(0, 0, 0, 0.3)"}
         >
           <Tooltip title={"Home"}>

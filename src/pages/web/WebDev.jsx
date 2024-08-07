@@ -1,4 +1,4 @@
-import { Typography, Stack, useMediaQuery } from "@mui/material";
+import { Typography, Stack, useMediaQuery, useTheme } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +9,7 @@ import { brown, orange } from "@mui/material/colors";
 const WebDev = () => {
   const [isExiting, setIsExiting] = useState(false);
   const navigate = useNavigate();
+  const theme = useTheme();
 
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isMd = useMediaQuery((theme) => theme.breakpoints.between("sm", "md"));
@@ -42,7 +43,8 @@ const WebDev = () => {
             justifyContent={"center"}
             alignItems={"center"}
             gap={5}
-            py={5}
+            pt={isMobile || isMd ? 5 : 25}
+            pb={5}
             px={padding}
           >
             <Typography variant="h2">Web Dev</Typography>
@@ -65,7 +67,8 @@ const WebDev = () => {
             gap={isMobile ? 5 : 15}
             justifyContent={"center"}
             alignItems={"center"}
-            py={2}
+            py={5}
+            px={2}
             overflow={"visible"}
             flexWrap={"wrap"}
           >

@@ -55,6 +55,7 @@ const Carousel = ({ color, data }) => {
         data.map((item, index) => {
           return (
             <PaperCard
+              key={item.title}
               data={item}
               currentSlide={currentSlide}
               direction={direction}

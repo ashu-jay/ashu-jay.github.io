@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import BlobBG from "../utils/BlobBG";
 import { useMediaQuery } from "@mui/material";
+import theme from "../theme";
 
-const Background = ({ children, bgColor }) => {
+const Background = ({ children, bgColor = theme.palette.primary }) => {
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
 
   return (

@@ -40,26 +40,26 @@ const Header = ({
     ? "30vw"
     : "20vw";
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (headerRef.current) {
-        const rect = headerRef.current.getBoundingClientRect();
-        const isVisible = rect.bottom >= 0;
-        // rect.left >= 0 &&
-        // rect.bottom <=
-        //   (window.innerHeight || document.documentElement.clientHeight) &&
-        // rect.right <=
-        //   (window.innerWidth || document.documentElement.clientWidth);
-        setIsHeaderOutOfView(!isVisible);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (headerRef.current) {
+  //       const rect = headerRef.current.getBoundingClientRect();
+  //       const isVisible = rect.bottom >= 0;
+  //       // rect.left >= 0 &&
+  //       // rect.bottom <=
+  //       //   (window.innerHeight || document.documentElement.clientHeight) &&
+  //       // rect.right <=
+  //       //   (window.innerWidth || document.documentElement.clientWidth);
+  //       setIsHeaderOutOfView(!isVisible);
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   handleScroll();
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
 
   const menuVariants = {
     hidden: { x: "100%" },
@@ -68,35 +68,26 @@ const Header = ({
 
   return (
     <>
-      <AnimatePresence>
-        {(isHeaderOutOfView || isMobile || side) && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <Box
-              position={"fixed"}
-              top={isMobile ? 20 : 50}
-              right={isMobile ? 35 : 75}
-              width={"50px"}
-              height={"50px"}
-              display={"flex"}
-              alignItems={"center"}
-              justifyContent={"center"}
-              onClick={() => setOpenMenu(true)}
-              sx={{ cursor: "pointer" }}
-              borderRadius={"8px"}
-              bgcolor={color[100]}
-              px={1}
-              zIndex={99}
-            >
-              <Menu sx={{ color: color[500], fontSize: 60 }} />
-            </Box>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {(isMobile || isMd || side) && (
+        <Box
+          position={"fixed"}
+          top={isMobile ? 20 : 50}
+          right={isMobile ? 35 : 75}
+          width={"50px"}
+          height={"50px"}
+          display={"flex"}
+          alignItems={"center"}
+          justifyContent={"center"}
+          onClick={() => setOpenMenu(true)}
+          sx={{ cursor: "pointer" }}
+          borderRadius={"8px"}
+          bgcolor={color[100]}
+          px={1}
+          zIndex={99}
+        >
+          <Menu sx={{ color: color[500], fontSize: 60 }} />
+        </Box>
+      )}
 
       <AnimatePresence>
         {openMenu && (
@@ -218,53 +209,52 @@ const Header = ({
         )}
       </AnimatePresence>
 
-      {!isMobile && !side && (
-        <motion.div
-          ref={headerRef}
-          initial={{ opacity: 1 }}
-          animate={isHeaderOutOfView ? { opacity: 0 } : { opacity: 1 }}
-          transition={{ duration: 0.5 }}
+      {!isMobile && !isMd && !side && (
+        <Stack
+          position={"fixed"}
+          top={0}
+          left={0}
+          right={0}
+          bgcolor={"rgba(209, 196, 233, 0.7)"}
+          direction={"row"}
+          gap={5}
+          alignItems={"center"}
+          minHeight={"5vh"}
+          justifyContent={"center"}
+          flexWrap={"wrap"}
+          py={2}
+          boxShadow={"0 0 5px 5px rgba(0, 0, 0, 0.3)"}
         >
+          <Tooltip title={"Home"}>
+            <Logo
+              width={"50px"}
+              height={"50px"}
+              color={"#4527a0"}
+              onClick={() => handleNavClick("/")}
+            />
+          </Tooltip>
           <Stack
             direction={"row"}
             gap={5}
-            alignItems={"center"}
-            minHeight={"10vh"}
-            justifyContent={"center"}
             flexWrap={"wrap"}
-            pt={5}
+            px={2}
+            justifyContent={"center"}
           >
-            <Tooltip title={"Home"}>
-              <Logo
-                width={"100px"}
-                height={"100px"}
-                color={"#4527a0"}
-                onClick={() => handleNavClick("/")}
-              />
-            </Tooltip>
-            <Stack
-              direction={"row"}
-              gap={5}
-              flexWrap={"wrap"}
-              px={2}
-              justifyContent={"center"}
-            >
-              <MenuItem onClick={() => handleNavClick("/web-development")}>
-                WEB DEVELOPMENT
-              </MenuItem>
-              <MenuItem onClick={() => handleNavClick("/game-development")}>
-                GAME DEVELOPMENT
-              </MenuItem>
-              <MenuItem onClick={() => handleNavClick("/other-stuff")}>
-                MISCELLANEOUS
-              </MenuItem>
-              <Stack direction={"row"} gap={2}>
-                <GitHubIcon color={"primary.500"} />
-                <LinkedInIcon color={"primary.500"} />
-              </Stack>
+            <MenuItem onClick={() => handleNavClick("/web-development")}>
+              WEB DEVELOPMENT
+            </MenuItem>
+            <MenuItem onClick={() => handleNavClick("/game-development")}>
+              GAME DEVELOPMENT
+            </MenuItem>
+            <MenuItem onClick={() => handleNavClick("/other-stuff")}>
+              MISCELLANEOUS
+            </MenuItem>
+            <Stack direction={"row"} gap={2}>
+              <GitHubIcon color={"primary.500"} />
+              <LinkedInIcon color={"primary.500"} />
             </Stack>
           </Stack>
-        </motion.div>
+        </Stack>
       )}
     </>
   );

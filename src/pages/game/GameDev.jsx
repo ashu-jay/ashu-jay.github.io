@@ -42,7 +42,8 @@ const GameDev = () => {
             justifyContent={"center"}
             alignItems={"center"}
             gap={5}
-            py={5}
+            pt={isMobile || isMd ? 5 : 25}
+            pb={5}
             px={padding}
           >
             <Typography variant="h2">Game Dev</Typography>
@@ -65,7 +66,8 @@ const GameDev = () => {
             gap={isMobile ? 5 : 15}
             justifyContent={"center"}
             alignItems={"center"}
-            py={2}
+            py={5}
+            px={2}
             overflow={"visible"}
             flexWrap={"wrap"}
           >

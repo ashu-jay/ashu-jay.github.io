@@ -16,7 +16,7 @@ const MenuItem = ({
       scale: 1,
       borderWidth: border ? 1 : 0,
       borderColor: side ? color[200] : theme.palette.primary[200],
-      backgroundColor: side ? "#ffffff" : "transparent",
+      backgroundColor: side ? "#ffffff" : "rgba(209, 196, 233, 0)",
       transition: { duration: 0.1 },
     },
     hover: {

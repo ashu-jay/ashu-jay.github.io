@@ -1,8 +1,8 @@
-import { Close, Expand, OpenInFull } from "@mui/icons-material";
+import { Close, OpenInFull } from "@mui/icons-material";
 import { Box, Modal, Skeleton, useMediaQuery } from "@mui/material";
 import { useState } from "react";
 
-const CardImage = ({ image }) => {
+const CardImage = ({ image, video }) => {
   const [openImage, setOpenImage] = useState(false);
 
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
@@ -26,20 +26,23 @@ const CardImage = ({ image }) => {
         }}
         onClick={() => setOpenImage(true)}
       >
-        {!image && (
+        {!image && !video && (
           <Skeleton
             variant="rectangular"
             sx={{ width: "100%", height: "100%" }}
           />
         )}
-        {image && (
+        {(image || video) && (
           <>
             <Box
-              component={"img"}
+              component={video ? "video" : "img"}
               width={"100%"}
               height={"100%"}
-              src={image}
+              src={video ? video : image}
               sx={{ objectFit: "cover" }}
+              autoPlay={video ? true : undefined}
+              loop={video ? true : undefined}
+              muted={video ? true : undefined}
             />
             <OpenInFull
               sx={{
@@ -63,14 +66,18 @@ const CardImage = ({ image }) => {
       >
         <>
           <Box
-            component={"img"}
+            component={video ? "video" : "img"}
             m={5}
             width={"auto"}
             maxWidth={"100%"}
             height={"auto"}
             maxHeight={"100%"}
-            src={image}
+            src={video ? video : image}
             sx={{ objectFit: "contain" }}
+            autoPlay={video ? true : undefined}
+            loop={video ? true : undefined}
+            muted={video ? true : undefined}
+            controls={video ? true : undefined}
           />
           <Close
             sx={{

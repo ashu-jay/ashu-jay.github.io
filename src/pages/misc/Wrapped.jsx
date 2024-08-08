@@ -1,12 +1,11 @@
-import { Stack, useMediaQuery } from "@mui/material";
+import { Link, Stack, useMediaQuery } from "@mui/material";
 import { AnimatePresence } from "framer-motion";
 import Header from "../../components/Header";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { cyan, teal } from "@mui/material/colors";
 import Background from "../../components/Background";
-import aristotle from "../../images/aristotle.png";
-import arusto_banner from "../../images/arusto_banner.jpeg";
+import wrapped from "../../videos/wrapped.mp4";
 import Carousel from "../../components/carousel/Carousel";
 import CarouselHeader from "../../components/carousel/CarouselHeader";
 
@@ -29,16 +28,28 @@ const Wrapped = () => {
 
   const data = [
     {
-      title: "Arusto",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor pellentesque luctus. Nulla sodales at massa ut laoreet. Duis ut ultrices neque. Sed sed sapien ut massa maximus aliquam. Aliquam ut tortor non dolor vehicula ullamcorper tincidunt molestie mi. Quisque ut augue hendrerit, viverra augue sed, mollis mauris. Fusce vitae nibh eleifend, elementum massa id, rutrum ante. Praesent eget lacus est. Nullam nec auctor eros. Aliquam molestie tincidunt leo nec ultricies. Sed tempor blandit ante, vitae auctor neque dapibus et. Nunc vel egestas est, sed congue massa.",
-      image: aristotle,
-    },
-    {
-      title: "Maybe",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor pellentesque luctus. Nulla sodales at massa ut laoreet. Duis ut ultrices neque. Sed sed sapien ut massa maximus aliquam. Aliquam ut tortor non dolor vehicula ullamcorper tincidunt molestie mi. Quisque ut augue hendrerit, viverra augue sed, mollis mauris. Fusce vitae nibh eleifend, elementum massa id, rutrum ante. Praesent eget lacus est. Nullam nec auctor eros. Aliquam molestie tincidunt leo nec ultricies. Sed tempor blandit ante, vitae auctor neque dapibus et. Nunc vel egestas est, sed congue massa.",
-      image: arusto_banner,
+      title: "Wrapped",
+      description: (
+        <>
+          In my CS 2340 class at Georgia Tech, we were required to replicate a{" "}
+          <Link
+            href="https://ziweitang05.wixsite.com/project2-cs2340"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Spotify Wrapped
+          </Link>{" "}
+          page for our users using Android Studio. The app allows users to
+          create an account and link their personal Spotify accounts to it. With
+          their Spotify data, it app gives users the ability to create a joint
+          Spotify Wrapped playlist, hear clips from the songs in the Spotify
+          Wrapped playlist, play a game to guess your most listened to musician,
+          and recommend new artists based off of music tastes. I was in charge
+          of fetching data from the Spotify API, as well as implementing the
+          guessing game.{" "}
+        </>
+      ),
+      video: wrapped,
     },
   ];
 

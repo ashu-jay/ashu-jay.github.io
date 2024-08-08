@@ -1,6 +1,6 @@
 import { Box, Stack, Tooltip, useMediaQuery } from "@mui/material";
 import MenuItem from "./MenuItem";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Logo from "./icons/Logo";
 import { Close, Menu } from "@mui/icons-material";
@@ -25,7 +25,6 @@ const Header = ({
   secondary = theme.palette.secondary,
 }) => {
   const headerRef = useRef(null);
-  const [isHeaderOutOfView, setIsHeaderOutOfView] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
 
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
@@ -39,27 +38,6 @@ const Header = ({
     : isLg
     ? "30vw"
     : "20vw";
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (headerRef.current) {
-  //       const rect = headerRef.current.getBoundingClientRect();
-  //       const isVisible = rect.bottom >= 0;
-  //       // rect.left >= 0 &&
-  //       // rect.bottom <=
-  //       //   (window.innerHeight || document.documentElement.clientHeight) &&
-  //       // rect.right <=
-  //       //   (window.innerWidth || document.documentElement.clientWidth);
-  //       setIsHeaderOutOfView(!isVisible);
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   handleScroll();
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
 
   const menuVariants = {
     hidden: { x: "100%" },

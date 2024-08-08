@@ -69,7 +69,7 @@ const PaperCard = ({ data, currentSlide, direction, slideVariants, color }) => {
             <Typography variant="h6">{data.description}</Typography>
           </Stack>
           {(currentSlide % 2 === 0 || isMd || isMobile) && (
-            <CardImage image={data.image} />
+            <CardImage image={data.image} video={data.video} />
           )}
         </Stack>
       </AnimatePresence>

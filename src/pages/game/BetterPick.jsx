@@ -5,8 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { grey } from "@mui/material/colors";
 import Background from "../../components/Background";
-import aristotle from "../../images/aristotle.png";
-import arusto_banner from "../../images/arusto_banner.jpeg";
+import better_pick from "../../images/better_pick.jpg";
 import Carousel from "../../components/carousel/Carousel";
 import CarouselHeader from "../../components/carousel/CarouselHeader";
 
@@ -39,16 +38,10 @@ const BetterPick = () => {
 
   const data = [
     {
-      title: "Arusto",
+      title: "The Better Pick",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor pellentesque luctus. Nulla sodales at massa ut laoreet. Duis ut ultrices neque. Sed sed sapien ut massa maximus aliquam. Aliquam ut tortor non dolor vehicula ullamcorper tincidunt molestie mi. Quisque ut augue hendrerit, viverra augue sed, mollis mauris. Fusce vitae nibh eleifend, elementum massa id, rutrum ante. Praesent eget lacus est. Nullam nec auctor eros. Aliquam molestie tincidunt leo nec ultricies. Sed tempor blandit ante, vitae auctor neque dapibus et. Nunc vel egestas est, sed congue massa.",
-      image: aristotle,
-    },
-    {
-      title: "Maybe",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor pellentesque luctus. Nulla sodales at massa ut laoreet. Duis ut ultrices neque. Sed sed sapien ut massa maximus aliquam. Aliquam ut tortor non dolor vehicula ullamcorper tincidunt molestie mi. Quisque ut augue hendrerit, viverra augue sed, mollis mauris. Fusce vitae nibh eleifend, elementum massa id, rutrum ante. Praesent eget lacus est. Nullam nec auctor eros. Aliquam molestie tincidunt leo nec ultricies. Sed tempor blandit ante, vitae auctor neque dapibus et. Nunc vel egestas est, sed congue massa.",
-      image: arusto_banner,
+        "This game is an endless puzzle game which tests your reflexes by enhancing your mathematical ability. It was the second game I'd ever created and massively improved my skills in game development. I also got to feature my own music/beats in the game, which was something I was very new to!",
+      image: better_pick,
     },
   ];
 

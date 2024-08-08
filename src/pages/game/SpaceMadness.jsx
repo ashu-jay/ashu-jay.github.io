@@ -5,8 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { pink, purple } from "@mui/material/colors";
 import Background from "../../components/Background";
-import aristotle from "../../images/aristotle.png";
-import arusto_banner from "../../images/arusto_banner.jpeg";
+import space_madness from "../../images/space_madness.png";
 import Carousel from "../../components/carousel/Carousel";
 import CarouselHeader from "../../components/carousel/CarouselHeader";
 
@@ -29,16 +28,10 @@ const SpaceMadness = () => {
 
   const data = [
     {
-      title: "Arusto",
+      title: "Space Madness",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor pellentesque luctus. Nulla sodales at massa ut laoreet. Duis ut ultrices neque. Sed sed sapien ut massa maximus aliquam. Aliquam ut tortor non dolor vehicula ullamcorper tincidunt molestie mi. Quisque ut augue hendrerit, viverra augue sed, mollis mauris. Fusce vitae nibh eleifend, elementum massa id, rutrum ante. Praesent eget lacus est. Nullam nec auctor eros. Aliquam molestie tincidunt leo nec ultricies. Sed tempor blandit ante, vitae auctor neque dapibus et. Nunc vel egestas est, sed congue massa.",
-      image: aristotle,
-    },
-    {
-      title: "Maybe",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor pellentesque luctus. Nulla sodales at massa ut laoreet. Duis ut ultrices neque. Sed sed sapien ut massa maximus aliquam. Aliquam ut tortor non dolor vehicula ullamcorper tincidunt molestie mi. Quisque ut augue hendrerit, viverra augue sed, mollis mauris. Fusce vitae nibh eleifend, elementum massa id, rutrum ante. Praesent eget lacus est. Nullam nec auctor eros. Aliquam molestie tincidunt leo nec ultricies. Sed tempor blandit ante, vitae auctor neque dapibus et. Nunc vel egestas est, sed congue massa.",
-      image: arusto_banner,
+        "My interest in game development bore fruit through this first game I made with Unity. It is an endless runner-type game in space with an objective to achieve a high score. You can also buy cool rocket costumes with coins in the game shop!",
+      image: space_madness,
     },
   ];
 

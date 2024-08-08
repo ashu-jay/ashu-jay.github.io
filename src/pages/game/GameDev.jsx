@@ -49,16 +49,15 @@ const GameDev = () => {
             <Typography variant="h2">Game Dev</Typography>
 
             <Typography variant="h5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              tempor pellentesque luctus. Nulla sodales at massa ut laoreet.
-              Duis ut ultrices neque. Sed sed sapien ut massa maximus aliquam.
-              Aliquam ut tortor non dolor vehicula ullamcorper tincidunt
-              molestie mi. Quisque ut augue hendrerit, viverra augue sed, mollis
-              mauris. Fusce vitae nibh eleifend, elementum massa id, rutrum
-              ante. Praesent eget lacus est. Nullam nec auctor eros. Aliquam
-              molestie tincidunt leo nec ultricies. Sed tempor blandit ante,
-              vitae auctor neque dapibus et. Nunc vel egestas est, sed congue
-              massa.
+              Like many, I had an interest in playing video games - specifically
+              mobile games. But what really irked my mind was how studios made
+              those games; how did they figure out the mechanics, the character
+              design, the UI, and other things. With that interest, I made two
+              mobile games using the Unity Editor, and my passion for developing
+              games only grew. I joined the VGDev club at Georgia Tech and
+              helped create an amazing PC game as well. I hope to continue
+              making games as a hobby, and maybe even publish a game in the
+              future.
             </Typography>
           </Stack>
           <Stack

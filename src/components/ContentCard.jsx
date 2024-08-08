@@ -77,12 +77,7 @@ const ContentCard = ({ title, color, shadow, onClick }) => {
           width: "100%",
         }}
       >
-        <Typography
-          variant={"h4"}
-          color={"white"}
-          fontFamily={"Montserrat, Arial, sans-serif"}
-          textAlign={"center"}
-        >
+        <Typography variant={"h4"} color={"white"} textAlign={"center"}>
           {title}
         </Typography>
         <ArrowForward sx={{ fontSize: "60px", color: "white" }} />

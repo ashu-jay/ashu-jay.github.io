@@ -49,16 +49,9 @@ const Misc = () => {
             <Typography variant="h2">Other Stuff</Typography>
 
             <Typography variant="h5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              tempor pellentesque luctus. Nulla sodales at massa ut laoreet.
-              Duis ut ultrices neque. Sed sed sapien ut massa maximus aliquam.
-              Aliquam ut tortor non dolor vehicula ullamcorper tincidunt
-              molestie mi. Quisque ut augue hendrerit, viverra augue sed, mollis
-              mauris. Fusce vitae nibh eleifend, elementum massa id, rutrum
-              ante. Praesent eget lacus est. Nullam nec auctor eros. Aliquam
-              molestie tincidunt leo nec ultricies. Sed tempor blandit ante,
-              vitae auctor neque dapibus et. Nunc vel egestas est, sed congue
-              massa.
+              This page is an archive of all the other random things I've done
+              besides games and websites - app development, venturous ideas and
+              fun classes at college.
             </Typography>
           </Stack>
           <Stack

@@ -50,16 +50,15 @@ const WebDev = () => {
             <Typography variant="h2">Web Dev</Typography>
 
             <Typography variant="h5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              tempor pellentesque luctus. Nulla sodales at massa ut laoreet.
-              Duis ut ultrices neque. Sed sed sapien ut massa maximus aliquam.
-              Aliquam ut tortor non dolor vehicula ullamcorper tincidunt
-              molestie mi. Quisque ut augue hendrerit, viverra augue sed, mollis
-              mauris. Fusce vitae nibh eleifend, elementum massa id, rutrum
-              ante. Praesent eget lacus est. Nullam nec auctor eros. Aliquam
-              molestie tincidunt leo nec ultricies. Sed tempor blandit ante,
-              vitae auctor neque dapibus et. Nunc vel egestas est, sed congue
-              massa.
+              My interest in Web Development first surfaced after making
+              websites using the Wix website builder. Since then, it has been a
+              dream of mine to be able to fully code a website from scratch, and
+              this portfolio website is the culmination of that dream. To
+              achieve this, I had to learn the tools and languages required to
+              make a website, which I did through the projects below. My skills
+              in HTML, CSS and JavaScript improved, and I learned how to use
+              React, Next.js, Node.js, TypeScript, Figma and other helpful tools
+              through these projects.
             </Typography>
           </Stack>
           <Stack

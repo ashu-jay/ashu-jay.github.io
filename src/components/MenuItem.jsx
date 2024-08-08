@@ -55,11 +55,7 @@ const MenuItem = ({
         whileHover={"hover"}
         variants={menuItemVariants}
       >
-        <Typography
-          variant="body1"
-          color={theme.palette.primary[500]}
-          fontFamily={"Montserrat, Arial, sans-serif"}
-        >
+        <Typography variant="body1" color={theme.palette.primary[500]}>
           {children}
         </Typography>
       </motion.div>

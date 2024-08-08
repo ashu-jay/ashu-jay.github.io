@@ -15,6 +15,10 @@ const theme = createTheme({
       main: deepPurple[50],
     },
   },
+  typography: {
+    fontFamily: `"Montserrat", "Arial", sans-serif`,
+    h2: { fontWeight: 500 },
+  },
 });
 
 export default theme;

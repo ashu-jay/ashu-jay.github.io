@@ -47,11 +47,7 @@ const LandingButton = ({ children, onClick }) => {
         whileHover={"hover"}
         variants={menuItemVariants}
       >
-        <Typography
-          variant="body1"
-          color={theme.palette.primary[50]}
-          fontFamily={"Montserrat, Arial, sans-serif"}
-        >
+        <Typography variant="body1" color={theme.palette.primary[50]}>
           {children}
         </Typography>
       </motion.div>

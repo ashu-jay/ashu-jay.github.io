@@ -17,10 +17,10 @@ export const CarouselNavButton = ({ children, label, color, onClick }) => {
           boxShadow: `0 .4em 0 .2em ${color[400]}`,
           transition: "all 150ms",
           background: `linear-gradient(135deg, ${color[600]}, ${color[300]} 70%)`,
-          ":active": {
+          ":hover": {
             background: `linear-gradient(315deg, ${color[600]}, ${color[300]} 70%)`,
           },
-          ":hover": {
+          ":active": {
             transform: "rotateX(30deg) translateY(.3em)",
             boxShadow: `0 0 0 0 ${color[400]}`,
           },

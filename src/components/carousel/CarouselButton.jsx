@@ -24,7 +24,7 @@ const CarouselButton = ({ pos, currentSlide, dataLength, paginate }) => {
             boxShadow: "0 .4em 0 .2em #333333",
             transition: "all 150ms",
             background: "linear-gradient(135deg, #000000, #444444 70%)",
-            ":active": {
+            ":hover": {
               background: "linear-gradient(315deg, #000000, #444444 70%)",
             },
             "::after": {
@@ -34,7 +34,7 @@ const CarouselButton = ({ pos, currentSlide, dataLength, paginate }) => {
               fontSize: "40px",
               color: "#FFFFFF",
             },
-            ":hover": {
+            ":active": {
               transform: "rotateX(30deg) translateY(.3em)",
               boxShadow: "0 0 0 0 #333333",
             },

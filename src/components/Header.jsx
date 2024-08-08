@@ -147,24 +147,36 @@ const Header = ({
                       width={"100px"}
                       height={"100px"}
                       color={"#ffffff"}
-                      onClick={() => handleNavClick("/")}
+                      onClick={() => {
+                        handleNavClick("/");
+                        setOpenMenu(false);
+                      }}
                     />
                     <MenuItem
-                      onClick={() => handleNavClick("/web-development")}
+                      onClick={() => {
+                        handleNavClick("/web-development");
+                        setOpenMenu(false);
+                      }}
                       side
                       color={secondary}
                     >
                       WEB DEVELOPMENT
                     </MenuItem>
                     <MenuItem
-                      onClick={() => handleNavClick("/game-development")}
+                      onClick={() => {
+                        handleNavClick("/game-development");
+                        setOpenMenu(false);
+                      }}
                       side
                       color={secondary}
                     >
                       GAME DEVELOPMENT
                     </MenuItem>
                     <MenuItem
-                      onClick={() => handleNavClick("/other-stuff")}
+                      onClick={() => {
+                        handleNavClick("/other-stuff");
+                        setOpenMenu(false);
+                      }}
                       side
                       color={secondary}
                     >

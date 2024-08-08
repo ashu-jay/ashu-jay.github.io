@@ -1,7 +1,7 @@
-import { Typography, Stack, useMediaQuery, useTheme } from "@mui/material";
+import { Typography, Stack, useMediaQuery } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import Header from "../../components/Header";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ContentCard from "../../components/ContentCard";
 import { brown, orange } from "@mui/material/colors";
@@ -9,7 +9,7 @@ import { brown, orange } from "@mui/material/colors";
 const WebDev = () => {
   const [isExiting, setIsExiting] = useState(false);
   const navigate = useNavigate();
-  const theme = useTheme();
+  const location = useLocation();
 
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isMd = useMediaQuery((theme) => theme.breakpoints.between("sm", "md"));
@@ -18,12 +18,14 @@ const WebDev = () => {
   const padding = isMobile ? 2 : isMd ? "10%" : isLg ? "15%" : "25%";
 
   const handleNavClick = (url) => {
-    if (url !== "/web-development") {
+    if (url !== location.pathname) {
       setIsExiting(true);
 
       setTimeout(() => {
         navigate(url);
       }, 300);
+    } else {
+      navigate(url);
     }
   };
 

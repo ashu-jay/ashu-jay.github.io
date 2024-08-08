@@ -1,7 +1,7 @@
 import { Stack, useMediaQuery } from "@mui/material";
 import { AnimatePresence } from "framer-motion";
 import Header from "../../components/Header";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { grey } from "@mui/material/colors";
 import Background from "../../components/Background";
@@ -22,12 +22,13 @@ const black = {
 const BetterPick = () => {
   const [isExiting, setIsExiting] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isMd = useMediaQuery((theme) => theme.breakpoints.between("sm", "md"));
 
   const handleNavClick = (url) => {
-    if (url !== "/game-development/the-better-pick") {
+    if (url !== location.pathname) {
       setIsExiting(true);
 
       setTimeout(() => {

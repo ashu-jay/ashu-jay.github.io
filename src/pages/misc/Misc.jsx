@@ -1,7 +1,7 @@
 import { Typography, Stack, useMediaQuery } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import Header from "../../components/Header";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ContentCard from "../../components/ContentCard";
 import { teal } from "@mui/material/colors";
@@ -9,6 +9,7 @@ import { teal } from "@mui/material/colors";
 const Misc = () => {
   const [isExiting, setIsExiting] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isMd = useMediaQuery((theme) => theme.breakpoints.between("sm", "md"));
@@ -17,7 +18,7 @@ const Misc = () => {
   const padding = isMobile ? 2 : isMd ? "10%" : isLg ? "15%" : "25%";
 
   const handleNavClick = (url) => {
-    if (url !== "/other-stuff") {
+    if (url !== location.pathname) {
       setIsExiting(true);
 
       setTimeout(() => {

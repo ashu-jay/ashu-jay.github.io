@@ -1,6 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import Header from "../../components/Header";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { orange, yellow } from "@mui/material/colors";
 import Background from "../../components/Background";
@@ -15,12 +15,13 @@ import CarouselHeader from "../../components/carousel/CarouselHeader";
 const Arusto = () => {
   const [isExiting, setIsExiting] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isMd = useMediaQuery((theme) => theme.breakpoints.between("sm", "md"));
 
   const handleNavClick = (url) => {
-    if (url !== "/web-development/arusto-ai") {
+    if (url !== location.pathname) {
       setIsExiting(true);
 
       setTimeout(() => {

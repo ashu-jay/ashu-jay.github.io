@@ -1,14 +1,15 @@
 import { Typography, Stack, useMediaQuery } from "@mui/material";
 import { AnimatePresence, motion } from "framer-motion";
 import Header from "../../components/Header";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ContentCard from "../../components/ContentCard";
-import { deepPurple, green, grey, purple } from "@mui/material/colors";
+import { green, grey, purple } from "@mui/material/colors";
 
 const GameDev = () => {
   const [isExiting, setIsExiting] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
 
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isMd = useMediaQuery((theme) => theme.breakpoints.between("sm", "md"));
@@ -17,7 +18,7 @@ const GameDev = () => {
   const padding = isMobile ? 2 : isMd ? "10%" : isLg ? "15%" : "25%";
 
   const handleNavClick = (url) => {
-    if (url !== "/game-development") {
+    if (url !== location.pathname) {
       setIsExiting(true);
 
       setTimeout(() => {

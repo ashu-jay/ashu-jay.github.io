@@ -10,6 +10,7 @@ import BetterPick from "../pages/game/BetterPick";
 import Misc from "../pages/misc/Misc";
 import Wrapped from "../pages/misc/Wrapped";
 import SpaceMadness from "../pages/game/SpaceMadness";
+import BookGenius from "../pages/misc/BookGenius";
 
 export const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -36,6 +37,7 @@ export const RouteTitleManager = () => {
       "/game-development/space-madness": "Space Madness",
       "/other-stuff": "Miscellaneous",
       "/other-stuff/wrapped": "Wrapped",
+      "/other-stuff/the-book-genius": "The Book Genius",
     };
 
     const currentTitle = routeTitles[location.pathname] || "Ashwin Jayendra";
@@ -71,6 +73,7 @@ export const MiscRoutes = () => {
     <Routes>
       <Route path="/" element={<Misc />} />
       <Route path="/wrapped" element={<Wrapped />} />
+      <Route path="/the-book-genius" element={<BookGenius />} />
     </Routes>
   );
 };

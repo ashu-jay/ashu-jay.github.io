@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ContentCard from "../../components/ContentCard";
-import { teal } from "@mui/material/colors";
+import { lightGreen, teal } from "@mui/material/colors";
 
 const Misc = () => {
   const [isExiting, setIsExiting] = useState(false);
@@ -70,6 +70,12 @@ const Misc = () => {
               color={teal[500]}
               shadow={teal[300]}
               onClick={() => handleNavClick("/other-stuff/wrapped")}
+            />
+            <ContentCard
+              title={"The Book Genius"}
+              color={lightGreen[500]}
+              shadow={lightGreen[300]}
+              onClick={() => handleNavClick("/other-stuff/the-book-genius")}
             />
           </Stack>
         </motion.div>

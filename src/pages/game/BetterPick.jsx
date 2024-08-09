@@ -1,4 +1,4 @@
-import { Stack, useMediaQuery } from "@mui/material";
+import { Link, Stack, useMediaQuery } from "@mui/material";
 import { AnimatePresence } from "framer-motion";
 import Header from "../../components/Header";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -40,8 +40,23 @@ const BetterPick = () => {
   const data = [
     {
       title: "The Better Pick",
-      description:
-        "This game is an endless puzzle game which tests your reflexes by enhancing your mathematical ability. It was the second game I'd ever created and massively improved my skills in game development. I also got to feature my own music/beats in the game, which was something I was very new to!",
+      description: (
+        <>
+          This game is an endless puzzle game which tests your reflexes by
+          enhancing your mathematical ability. It was the second game I'd ever
+          created and massively improved my skills in game development. I also
+          got to feature my own music/beats in the game, which was something I
+          was very new to! Check it out{" "}
+          <Link
+            href="https://ashujay.itch.io/the-better-pick"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            here
+          </Link>
+          !
+        </>
+      ),
       image: better_pick,
     },
   ];

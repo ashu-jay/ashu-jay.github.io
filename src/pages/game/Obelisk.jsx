@@ -44,8 +44,9 @@ const Obelisk = () => {
             target="_blank"
             rel="noreferrer noopener"
           >
-            click here!
+            click here
           </Link>
+          !
         </>
       ),
       image: obelisk_logo,

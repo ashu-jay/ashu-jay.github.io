@@ -28,8 +28,14 @@ export const RouteTitleManager = () => {
     const routeTitles = {
       "/": "Home",
       "/web-development": "Web Development",
+      "/web-development/arusto-ai": "Arusto AI",
+      "/web-development/d-and-d-ai": "Dungeons and Dragons AI",
       "/game-development": "Game Development",
+      "/game-development/project-obelisk": "Project Obelisk",
+      "/game-development/the-better-pick": "The Better Pick",
+      "/game-development/space-madness": "Space Madness",
       "/other-stuff": "Miscellaneous",
+      "/other-stuff/wrapped": "Wrapped",
     };
 
     const currentTitle = routeTitles[location.pathname] || "Ashwin Jayendra";

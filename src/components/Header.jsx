@@ -1,6 +1,6 @@
 import { Box, Stack, Tooltip, useMediaQuery } from "@mui/material";
 import MenuItem from "./MenuItem";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Logo from "./icons/Logo";
 import { Close, Menu } from "@mui/icons-material";
@@ -26,6 +26,8 @@ const Header = ({
 }) => {
   const headerRef = useRef(null);
   const [openMenu, setOpenMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
   const isMd = useMediaQuery((theme) => theme.breakpoints.between("sm", "md"));
@@ -44,28 +46,52 @@ const Header = ({
     visible: { x: "0" },
   };
 
+  useEffect(() => {
+    const controlNavbar = () => {
+      if (window.scrollY > lastScrollY) {
+        setShowMenu(false);
+      } else {
+        setShowMenu(true);
+      }
+
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", controlNavbar);
+
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, [lastScrollY]);
+
   return (
     <>
-      {(isMobile || isMd || side) && (
-        <Box
-          position={"fixed"}
-          top={isMobile ? 20 : 50}
-          right={isMobile ? 35 : 75}
-          width={"50px"}
-          height={"50px"}
-          display={"flex"}
-          alignItems={"center"}
-          justifyContent={"center"}
-          onClick={() => setOpenMenu(true)}
-          sx={{ cursor: "pointer" }}
-          borderRadius={"8px"}
-          bgcolor={color[100]}
-          px={1}
-          zIndex={99}
-        >
-          <Menu sx={{ color: color[500], fontSize: 60 }} />
-        </Box>
-      )}
+      <AnimatePresence>
+        {(isMobile || isMd || side) && showMenu && (
+          <Box
+            component={motion.div}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            position={"fixed"}
+            top={isMobile ? 20 : 50}
+            right={isMobile ? 35 : 75}
+            width={"50px"}
+            height={"50px"}
+            display={"flex"}
+            alignItems={"center"}
+            justifyContent={"center"}
+            onClick={() => setOpenMenu(true)}
+            sx={{ cursor: "pointer" }}
+            borderRadius={"8px"}
+            bgcolor={color[100]}
+            px={1}
+            zIndex={99}
+          >
+            <Menu sx={{ color: color[500], fontSize: 60 }} />
+          </Box>
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
         {openMenu && (

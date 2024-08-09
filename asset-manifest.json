@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a0048b44.css",
-    "main.js": "/static/js/main.6d57c56c.js",
+    "main.js": "/static/js/main.f3210e3c.js",
     "static/media/wrapped.mp4": "/static/media/wrapped.66664d39f6ea3dfa89c8.mp4",
     "static/media/dd_play.png": "/static/media/dd_play.43153fe3b494b9de2126.png",
     "static/media/dd_win.png": "/static/media/dd_win.57a75663116cd7e41d91.png",
@@ -9,17 +9,19 @@
     "static/media/obelisk_gameplay.png": "/static/media/obelisk_gameplay.5685662bb4661136a965.png",
     "static/media/arusto_logo.png": "/static/media/arusto_logo.c02f6c089e105873f35d.png",
     "static/media/arusto_tour.png": "/static/media/arusto_tour.885ab50cfdddef3fa767.png",
+    "static/media/blog.png": "/static/media/blog.084fa66b40d4c645f511.png",
     "static/media/arusto_analytics.png": "/static/media/arusto_analytics.d2d16df4c1c10095afde.png",
     "static/media/arusto_account.png": "/static/media/arusto_account.0c1da4944690f0697b79.png",
     "static/media/space_madness_gameplay.jpeg": "/static/media/space_madness_gameplay.c929818a385d0c52b571.jpeg",
     "static/media/obelisk_logo.png": "/static/media/obelisk_logo.81f5ae86ace9568b939c.png",
     "static/media/better_pick.jpg": "/static/media/better_pick.380118a08d81e4590232.jpg",
+    "static/media/book_genius.jpg": "/static/media/book_genius.2549db005d9fc1ced869.jpg",
     "index.html": "/index.html",
     "main.a0048b44.css.map": "/static/css/main.a0048b44.css.map",
-    "main.6d57c56c.js.map": "/static/js/main.6d57c56c.js.map"
+    "main.f3210e3c.js.map": "/static/js/main.f3210e3c.js.map"
   },
   "entrypoints": [
     "static/css/main.a0048b44.css",
-    "static/js/main.6d57c56c.js"
+    "static/js/main.f3210e3c.js"
   ]
 }

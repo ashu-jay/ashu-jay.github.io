@@ -3,13 +3,13 @@ import { AnimatePresence } from "framer-motion";
 import Header from "../../components/Header";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { lightGreen, lime } from "@mui/material/colors";
+import { pink, red } from "@mui/material/colors";
 import Background from "../../components/Background";
-import book_genius from "../../images/book_genius.jpg";
+import blog from "../../images/blog.png";
 import Carousel from "../../components/carousel/Carousel";
 import CarouselHeader from "../../components/carousel/CarouselHeader";
 
-const BookGenius = () => {
+const Blog = () => {
   const [isExiting, setIsExiting] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -29,16 +29,14 @@ const BookGenius = () => {
 
   const data = [
     {
-      title: "The Book Genius",
+      title: "Blog Posts",
       description: (
         <>
-          The Book Genius was a venture I started as an attempt to save paper.
-          It's a website made with Wix that connects people to buy and sell
-          second-hand books. This project helped me understand content
-          management and user experience on an e-commerce-like website. Check
-          out the website{" "}
+          During the COVID-19 pandemic, I started a blog and wrote about the
+          most random thoughts that came to my mind. I even wrote some stories
+          about my life - if you'd like to check it out, click{" "}
           <Link
-            href="https://ashwinjayendra.wixsite.com/the-book-genius"
+            href="https://misterrandomo.wordpress.com/"
             target="_blank"
             rel="noreferrer noopener"
           >
@@ -47,36 +45,33 @@ const BookGenius = () => {
           !
         </>
       ),
-      image: book_genius,
+      image: blog,
     },
   ];
 
   return (
     <AnimatePresence>
       {!isExiting && (
-        <Background bgColor={lightGreen}>
+        <Background bgColor={red}>
           {(isMobile || isMd) && (
             <Header
               handleNavClick={handleNavClick}
               side
-              color={lightGreen}
-              secondary={lime}
+              color={red}
+              secondary={pink}
             />
           )}
           {!isMobile && !isMd && (
             <Stack width={"100%"} height={"70vh"} alignItems={"center"}>
-              <CarouselHeader
-                color={lightGreen}
-                handleNavClick={handleNavClick}
-              />
-              <Carousel color={lightGreen} data={data} />
+              <CarouselHeader color={red} handleNavClick={handleNavClick} />
+              <Carousel color={red} data={data} />
             </Stack>
           )}
-          {(isMobile || isMd) && <Carousel color={lightGreen} data={data} />}
+          {(isMobile || isMd) && <Carousel color={red} data={data} />}
         </Background>
       )}
     </AnimatePresence>
   );
 };
 
-export default BookGenius;
+export default Blog;

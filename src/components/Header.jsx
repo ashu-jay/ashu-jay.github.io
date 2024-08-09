@@ -48,7 +48,7 @@ const Header = ({
 
   useEffect(() => {
     const controlNavbar = () => {
-      if (window.scrollY > lastScrollY) {
+      if (window.scrollY > lastScrollY && window.scrollY !== 0) {
         setShowMenu(false);
       } else {
         setShowMenu(true);

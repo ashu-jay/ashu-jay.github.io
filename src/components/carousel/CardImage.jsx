@@ -40,29 +40,37 @@ const CardImage = ({ image, video }) => {
               height={"100%"}
               src={video ? video : image}
               sx={{ objectFit: "cover" }}
-              autoPlay={video ? true : undefined}
+              autoPlay={video && !isMobile ? true : undefined}
               loop={video ? true : undefined}
-              muted={video ? true : undefined}
+              muted={video && !isMobile ? true : undefined}
+              controls={isMobile ? true : undefined}
             />
-            <OpenInFull
-              sx={{
-                color: "#FFFFFF",
-                borderRadius: "4px",
-                position: "absolute",
-                top: "1em",
-                right: "1em",
-                bgcolor: "rgba(0, 0, 0, 0.3)",
-                ":hover": { bgcolor: "rgba(0, 0, 0, 0.5)" },
-              }}
-              onClick={() => setOpenImage(true)}
-            />
+            {((!video && isMobile) || !isMobile) && (
+              <OpenInFull
+                sx={{
+                  color: "#FFFFFF",
+                  borderRadius: "4px",
+                  position: "absolute",
+                  top: "1em",
+                  right: "1em",
+                  bgcolor: "rgba(0, 0, 0, 0.3)",
+                  ":hover": { bgcolor: "rgba(0, 0, 0, 0.5)" },
+                }}
+                onClick={() => setOpenImage(true)}
+              />
+            )}
           </>
         )}
       </Box>
       <Modal
-        open={openImage}
+        open={video && isMobile ? false : openImage}
         onClose={() => setOpenImage(false)}
-        sx={{ display: "flex", justifyContent: "center", alignItems: "items" }}
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "items",
+          bgcolor: isMobile || isMd ? "#FFFFFF" : undefined,
+        }}
       >
         <>
           <Box

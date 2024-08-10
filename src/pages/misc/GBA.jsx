@@ -3,7 +3,7 @@ import { AnimatePresence } from "framer-motion";
 import Header from "../../components/Header";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { amber, pink, red, yellow } from "@mui/material/colors";
+import { amber, yellow } from "@mui/material/colors";
 import Background from "../../components/Background";
 import gba from "../../images/gba.jpg";
 import gba_frog from "../../images/gba_frog.png";

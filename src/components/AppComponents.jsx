@@ -12,6 +12,7 @@ import Wrapped from "../pages/misc/Wrapped";
 import SpaceMadness from "../pages/game/SpaceMadness";
 import BookGenius from "../pages/misc/BookGenius";
 import Blog from "../pages/misc/Blog";
+import GBA from "../pages/misc/GBA";
 
 export const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -40,6 +41,7 @@ export const RouteTitleManager = () => {
       "/other-stuff/wrapped": "Wrapped",
       "/other-stuff/the-book-genius": "The Book Genius",
       "/other-stuff/blog": "Blog",
+      "/other-stuff/cs-2261": "CS 2261",
     };
 
     const currentTitle = routeTitles[location.pathname] || "Ashwin Jayendra";
@@ -77,6 +79,7 @@ export const MiscRoutes = () => {
       <Route path="/wrapped" element={<Wrapped />} />
       <Route path="/the-book-genius" element={<BookGenius />} />
       <Route path="/blog" element={<Blog />} />
+      <Route path="/cs-2261" element={<GBA />} />
     </Routes>
   );
 };

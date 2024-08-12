@@ -78,12 +78,14 @@ const WebDev = () => {
               color={orange[500]}
               shadow={orange[300]}
               onClick={() => handleNavClick("/web-development/arusto-ai")}
+              description="Summer 2024 Internship for AI-based content creation"
             />
             <ContentCard
               title={"Dungeons and Dragons AI"}
               color={brown[500]}
               shadow={brown[300]}
               onClick={() => handleNavClick("/web-development/d-and-d-ai")}
+              description="GT WebDev club project to make a web-based game whose story is created by ChatGPT"
             />
           </Stack>
         </motion.div>

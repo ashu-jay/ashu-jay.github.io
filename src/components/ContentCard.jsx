@@ -1,12 +1,25 @@
 import { ArrowForward } from "@mui/icons-material";
-import { Card, CardContent, Typography, useMediaQuery } from "@mui/material";
+import {
+  Card,
+  CardContent,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
-const ContentCard = ({ title, color, shadow, onClick }) => {
+const ContentCard = ({
+  title,
+  color,
+  shadow,
+  onClick,
+  description = "An Awesome Project!",
+}) => {
   const [expand, setExpand] = useState(false);
   const [isCentered, setIsCentered] = useState(false);
   const [translateValues, setTranslateValues] = useState({ x: 0, y: 0 });
+  const [isHover, setIsHover] = useState(false);
   const cardRef = useRef(null);
 
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down("sm"));
@@ -51,8 +64,8 @@ const ContentCard = ({ title, color, shadow, onClick }) => {
                 : window.innerWidth
             }px ${color}`
           : `0px 0px 30px ${isMobile ? 5 : 20}px ${shadow}`,
+        transition: { duration: expand ? 0.1 : 1, ease: "easeInOut" },
       }}
-      transition={{ duration: expand ? 0.1 : 1, ease: "easeInOut" }}
       variant="outlined"
       sx={{
         width: "20em",
@@ -66,21 +79,47 @@ const ContentCard = ({ title, color, shadow, onClick }) => {
         justifyContent: "center",
         cursor: "pointer",
         zIndex: 1,
+        transition: "transform 0.3s ease",
+        ":hover": { transform: "scale(1.05)" },
       }}
+      onMouseEnter={() => setIsHover(true)}
+      onMouseLeave={() => setIsHover(false)}
       onClick={handleClick}
     >
       <CardContent
         sx={{
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "space-evenly",
           width: "100%",
         }}
       >
-        <Typography variant={"h4"} color={"white"} textAlign={"center"}>
-          {title}
+        <Stack
+          direction={"row"}
+          gap={1}
+          alignItems={"center"}
+          justifyContent={"space-evenly"}
+        >
+          <Typography variant={"h4"} color={"#FFFFFF"} textAlign={"center"}>
+            {title}
+          </Typography>
+          <ArrowForward sx={{ fontSize: "60px", color: "white" }} />
+        </Stack>
+        <Typography
+          variant="body1"
+          color={"#FFFFFF"}
+          textAlign={"center"}
+          sx={{
+            marginTop: 2,
+            opacity: isHover ? 1 : 0,
+            maxHeight: isHover ? "100px" : "0px",
+            overflow: "hidden",
+            transition: "opacity 0.3s ease, max-height 0.3s ease",
+          }}
+        >
+          {description}
         </Typography>
-        <ArrowForward sx={{ fontSize: "60px", color: "white" }} />
       </CardContent>
     </Card>
   );

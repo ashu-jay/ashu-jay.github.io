@@ -70,24 +70,28 @@ const Misc = () => {
               color={teal[500]}
               shadow={teal[300]}
               onClick={() => handleNavClick("/other-stuff/wrapped")}
+              description="College class project to create an android app that summarizes your music tastes"
             />
             <ContentCard
               title={"CS 2261"}
               color={amber[500]}
               shadow={amber[300]}
               onClick={() => handleNavClick("/other-stuff/cs-2261")}
+              description="A bunch of games I made for a college class"
             />
             <ContentCard
               title={"The Book Genius"}
               color={lightGreen[500]}
               shadow={lightGreen[300]}
               onClick={() => handleNavClick("/other-stuff/the-book-genius")}
+              description="Venture idea website made to save paper"
             />
             <ContentCard
               title={"Blog"}
               color={red[500]}
               shadow={red[300]}
               onClick={() => handleNavClick("/other-stuff/blog")}
+              description="My thoughts on random things in the world and my own experiences"
             />
           </Stack>
         </motion.div>

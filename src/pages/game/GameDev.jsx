@@ -78,6 +78,7 @@ const GameDev = () => {
               onClick={() =>
                 handleNavClick("/game-development/project-obelisk")
               }
+              description="VGDev club project to make a 3D isometric shooter game with Unity"
             />
             <ContentCard
               title={"The Better Pick"}
@@ -86,12 +87,14 @@ const GameDev = () => {
               onClick={() =>
                 handleNavClick("/game-development/the-better-pick")
               }
+              description="Puzzle game for mobile made with Unity"
             />
             <ContentCard
               title={"Space Madness"}
               color={purple[500]}
               shadow={purple[300]}
               onClick={() => handleNavClick("/game-development/space-madness")}
+              description="Survival game for mobile made with Unity"
             />
           </Stack>
         </motion.div>

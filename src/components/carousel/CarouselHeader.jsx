@@ -1,9 +1,9 @@
 import { Box, Stack } from "@mui/material";
 import { CarouselNavButton } from "./CarouselNavButton";
 import {
+  Apps,
   Home,
   MonitorOutlined,
-  MoreHoriz,
   SportsEsports,
 } from "@mui/icons-material";
 
@@ -78,7 +78,7 @@ const CarouselHeader = ({ color, handleNavClick, light = false }) => {
           color={color}
           onClick={() => handleNavClick("/other-stuff")}
         >
-          <MoreHoriz
+          <Apps
             sx={{ color: light ? "#FFFFFF" : "#000000", fontSize: "36px" }}
           />
         </CarouselNavButton>

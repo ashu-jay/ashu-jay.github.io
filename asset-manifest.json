@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.a0048b44.css",
-    "main.js": "/static/js/main.ea0c70d4.js",
+    "main.js": "/static/js/main.54ae370d.js",
     "static/media/wrapped.mp4": "/static/media/wrapped.66664d39f6ea3dfa89c8.mp4",
     "static/media/gba.jpg": "/static/media/gba.6596b807d178b69dfa24.jpg",
     "static/media/dd_play.png": "/static/media/dd_play.43153fe3b494b9de2126.png",
@@ -22,10 +22,10 @@
     "static/media/book_genius.jpg": "/static/media/book_genius.2549db005d9fc1ced869.jpg",
     "index.html": "/index.html",
     "main.a0048b44.css.map": "/static/css/main.a0048b44.css.map",
-    "main.ea0c70d4.js.map": "/static/js/main.ea0c70d4.js.map"
+    "main.54ae370d.js.map": "/static/js/main.54ae370d.js.map"
   },
   "entrypoints": [
     "static/css/main.a0048b44.css",
-    "static/js/main.ea0c70d4.js"
+    "static/js/main.54ae370d.js"
   ]
 }

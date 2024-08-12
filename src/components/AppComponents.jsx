@@ -35,6 +35,7 @@ export const RouteTitleManager = () => {
       "/web-development/d-and-d-ai": "Dungeons and Dragons AI",
       "/game-development": "Game Development",
       "/game-development/project-obelisk": "Project Obelisk",
+      "/game-development/gba": "GBA Emulation",
       "/game-development/the-better-pick": "The Better Pick",
       "/game-development/space-madness": "Space Madness",
       "/other-stuff": "Miscellaneous",
@@ -66,6 +67,7 @@ export const GameDevRoutes = () => {
     <Routes>
       <Route path="/" element={<GameDev />} />
       <Route path="/project-obelisk" element={<Obelisk />} />
+      <Route path="/gba" element={<GBA />} />
       <Route path="/the-better-pick" element={<BetterPick />} />
       <Route path="/space-madness" element={<SpaceMadness />} />
     </Routes>
@@ -79,7 +81,6 @@ export const MiscRoutes = () => {
       <Route path="/wrapped" element={<Wrapped />} />
       <Route path="/the-book-genius" element={<BookGenius />} />
       <Route path="/blog" element={<Blog />} />
-      <Route path="/cs-2261" element={<GBA />} />
     </Routes>
   );
 };

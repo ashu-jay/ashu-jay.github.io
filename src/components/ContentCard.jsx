@@ -79,8 +79,6 @@ const ContentCard = ({
         justifyContent: "center",
         cursor: "pointer",
         zIndex: 1,
-        transition: "transform 0.3s ease",
-        ":hover": { transform: "scale(1.05)" },
       }}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}

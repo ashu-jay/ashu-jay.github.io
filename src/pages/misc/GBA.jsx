@@ -33,7 +33,7 @@ const GBA = () => {
 
   const data = [
     {
-      title: "CS 2261",
+      title: "GBA Emulation",
       description:
         "During the Fall 2023 semester at Georgia Tech, I was enrolled in a class called CS 2261 - Media Device Architecture. The course was based on learning the different components of a computer (in this case, the GameBoy Advance), and how they all come together to work on display. What I particularly liked about this class was that we had to make games as assignments, while learning how pixels, sound, and controls come together. All games were made entirely in C, and I had a lot of fun making games in this class!",
       image: gba,

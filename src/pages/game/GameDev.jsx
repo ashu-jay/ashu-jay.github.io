@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ContentCard from "../../components/ContentCard";
-import { green, grey, purple } from "@mui/material/colors";
+import { amber, green, grey, purple } from "@mui/material/colors";
 
 const GameDev = () => {
   const [isExiting, setIsExiting] = useState(false);
@@ -79,6 +79,13 @@ const GameDev = () => {
                 handleNavClick("/game-development/project-obelisk")
               }
               description="VGDev club project to make a 3D isometric shooter game with Unity"
+            />
+            <ContentCard
+              title={"GameBoy Advance Emulation"}
+              color={amber[500]}
+              shadow={amber[300]}
+              onClick={() => handleNavClick("/game-development/gba")}
+              description="A bunch of games I made for a college class"
             />
             <ContentCard
               title={"The Better Pick"}

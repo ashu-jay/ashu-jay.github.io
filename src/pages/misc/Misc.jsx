@@ -4,7 +4,7 @@ import Header from "../../components/Header";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ContentCard from "../../components/ContentCard";
-import { amber, lightGreen, red, teal } from "@mui/material/colors";
+import { lightGreen, red, teal } from "@mui/material/colors";
 
 const Misc = () => {
   const [isExiting, setIsExiting] = useState(false);
@@ -71,13 +71,6 @@ const Misc = () => {
               shadow={teal[300]}
               onClick={() => handleNavClick("/other-stuff/wrapped")}
               description="College class project to create an android app that summarizes your music tastes"
-            />
-            <ContentCard
-              title={"CS 2261"}
-              color={amber[500]}
-              shadow={amber[300]}
-              onClick={() => handleNavClick("/other-stuff/cs-2261")}
-              description="A bunch of games I made for a college class"
             />
             <ContentCard
               title={"The Book Genius"}

@@ -88,14 +88,13 @@ const ContentCard = ({
         sx={{
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-evenly",
+          alignItems: "space-evenly",
+          justifyContent: "center",
           width: "100%",
         }}
       >
         <Stack
           direction={"row"}
-          gap={1}
           alignItems={"center"}
           justifyContent={"space-evenly"}
         >

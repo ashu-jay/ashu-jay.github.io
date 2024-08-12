@@ -109,8 +109,8 @@ const ContentCard = ({
           textAlign={"center"}
           sx={{
             marginTop: 2,
-            opacity: isHover ? 1 : 0,
-            maxHeight: isHover ? "100px" : "0px",
+            opacity: isHover || expand || isCentered ? 1 : 0,
+            maxHeight: isHover || expand || isCentered ? "100px" : "0px",
             overflow: "hidden",
             transition: "opacity 0.3s ease, max-height 0.3s ease",
           }}

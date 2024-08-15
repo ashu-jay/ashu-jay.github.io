@@ -12,7 +12,7 @@ import Wrapped from "../pages/misc/Wrapped";
 import SpaceMadness from "../pages/game/SpaceMadness";
 import BookGenius from "../pages/misc/BookGenius";
 import Blog from "../pages/misc/Blog";
-import GBA from "../pages/misc/GBA";
+import GBA from "../pages/game/GBA";
 
 export const ScrollToTop = () => {
   const { pathname } = useLocation();

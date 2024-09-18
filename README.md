@@ -6,3 +6,4 @@ If you have any concerns or improvements to be made on this website, or if you h
 
 Current ideas:
 - Image reordering of places I've been
+- Guess top songs through lyrics
